@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="row_hero_image_size">100dp</dimen>
+    <dimen name="medium_space">16dp</dimen>
+    <dimen name="text_size_description">15sp</dimen>
+    <dimen name="text_size_row_title">17sp</dimen>
+    <dimen name="size_row_image_favorite">30dp</dimen>
+    <dimen name="small_space">8dp</dimen>
+    <dimen name="text_size_title_dialog">22sp</dimen>
+    <dimen name="exit_size_image_view">40dp</dimen>
+    <dimen name="small_round">8dp</dimen>
+    <dimen name="app_bar_height">220dp</dimen>
+</resources>

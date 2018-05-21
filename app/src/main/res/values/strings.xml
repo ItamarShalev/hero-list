@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">hero_apps</string>
+    <string name="heroes_updated">The heroes updated from server please wait...</string>
+    <string name="successfully_updated">Successfully updated</string>
+    <string name="already_updated">Already updated</string>
+    <string name="no_have_internet_please_check_on">No have internet please check on</string>
+    <string name="error">Error :</string>
+    <string name="Internet_slow_please_refresh_and_fix">Internet slow please refresh and fix</string>
+    <string name="Failed_from_the_server_try_again_later">Failed from the server try again later</string>
+    <string name="example">Example</string>
+    <string name="strength_speed_durability_agility">Strength, Speed, Durability, Agility</string>
+</resources>

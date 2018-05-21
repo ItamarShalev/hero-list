@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="16dp"
+    app:cardCornerRadius="8dp">
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        android:padding="@dimen/small_space">
+
+
+        <hero.apps.exam_hero_apps.view.CircleImageView
+            android:id="@+id/hero_image"
+            android:layout_width="@dimen/row_hero_image_size"
+            android:layout_height="@dimen/row_hero_image_size"
+            android:layout_marginEnd="@dimen/medium_space"
+            android:src="@drawable/no_image_available" />
+
+
+        <TextView
+            android:id="@+id/hero_name_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/hero_image"
+            android:layout_toStartOf="@id/favorite_hero_image"
+            android:text="@string/example"
+            android:textSize="@dimen/text_size_row_title"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/hero_abilities_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@id/hero_name_text_view"
+            android:layout_alignStart="@id/hero_name_text_view"
+            android:layout_below="@id/hero_name_text_view"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="5dp"
+            android:text="@string/strength_speed_durability_agility"
+            android:textSize="@dimen/text_size_description" />
+
+        <ImageView
+            android:id="@+id/favorite_hero_image"
+            android:layout_width="@dimen/size_row_image_favorite"
+            android:layout_height="@dimen/size_row_image_favorite"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="@dimen/small_space"
+            android:src="@drawable/heart"
+            android:visibility="invisible"
+            android:contentDescription="favorite heart" />
+    </RelativeLayout>
+
+
+</android.support.v7.widget.CardView>

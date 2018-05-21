@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@color/dark_background_app</color>
+    <color name="colorPrimaryDark">@color/dark_background_app</color>
+    <color name="colorAccent">#707070</color>
+    <color name="dark_background_app">#510101</color>
+    <color name="text_color_title">#dfdfdf</color>
+    <color name="background_title_transillumination">#6bffffff</color>
+</resources>

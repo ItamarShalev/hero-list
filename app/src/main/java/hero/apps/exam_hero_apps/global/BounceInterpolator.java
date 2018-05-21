@@ -1,0 +1,39 @@
+package hero.apps.exam_hero_apps.global;
+
+
+public class BounceInterpolator implements android.view.animation.Interpolator {
+    /**
+     * The amplitude of the bounces. The higher value (10, for example) produces more pronounced bounces.
+     * The lower values (0.1, for example) produce less noticeable wobbles.
+     */
+    private double mAmplitude = 1;
+
+    /**
+     * The frequency of the bounces. The higher value produces more wobbles during the animation time period.
+     */
+    private double mFrequency = 10;
+
+    /**
+     * Initialize a new interpolator.
+     *
+     * @param amplitude The amplitude of the bounces. The higher value produces more pronounced bounces. The lower values (0.1, for example) produce less noticeable wobbles.
+     * @param frequency The frequency of the bounces. The higher value produces more wobbles during the animation time period.
+     */
+    public BounceInterpolator(double amplitude, double frequency) {
+        mAmplitude = amplitude;
+        mFrequency = frequency;
+    }
+
+
+    @Override
+    public float getInterpolation(float time) {
+        double amplitude = mAmplitude;
+        if (amplitude == 0) {
+            amplitude = 0.03;
+        }
+
+        // The interpolation curve equation:
+        //    -e^(-time / amplitude) * cos(frequency * time) + 1
+        return (float) (-1 * Math.pow(Math.E, -time / mAmplitude) * Math.cos(mFrequency * time) + 1);
+    }
+}
