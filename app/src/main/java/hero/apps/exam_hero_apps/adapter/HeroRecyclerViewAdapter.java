@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.List;
 
 import hero.apps.exam_hero_apps.R;
@@ -101,25 +103,23 @@ public class HeroRecyclerViewAdapter extends RecyclerView.Adapter<HeroRecyclerVi
         Bitmap bitmap = currentHero.getImageBitmap();
 
         // If not have image, download and save the image
-            if (bitmap == null) {
+            if (bitmap == null || bitmap.isRecycled()) {
                 Global.NetworkingUtils.insertImageFromUrl(holder.heroImage, null, currentHero.getImageUrl(), AppContext.getDefaultResImageHero(), currentHero, new LoadingUrlThread.OnDownloadBitmapListener<Hero>() {
                     @Override
                     public void OnDownloadBitmap(@NonNull Bitmap bitmap, Hero tag) {
                         tag.setImageBitmap(bitmap);
-                        heroSqlite.insertImage(tag);
+                        heroSqlite.insertImage(tag.getName(),bitmap);
                     }
                 });
                 holder.heroImage.setImageResource(AppContext.getDefaultResImageHero());
             } else {
+                //Picasso.get().load(Global.BitmapUtils.getFileImage(activity,currentHero.getName())).into(holder.heroImage);
                 holder.heroImage.setImageBitmap(bitmap);
             }
-
 
         holder.heroNameTextView.setText(currentHero.getName());
         String abilities = Global.arrayToString(currentHero.getAbilitiesArray(), delimiter);
         holder.heroAbilitiesTextView.setText(abilities);
-
-
         //id is my hero so visible the heart
         if (currentHero.isFavoriteHero()) {
             Global.fadeView(0, 1, holder.favoriteHeroImage, 400);

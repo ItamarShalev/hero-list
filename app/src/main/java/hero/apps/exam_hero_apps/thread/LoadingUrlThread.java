@@ -39,7 +39,7 @@ public class LoadingUrlThread<T> extends Thread {
      * @param progressBar              before start to download is show and after is dismiss
      * @param urlImage                 url of image to download
      * @param defaultRes               if error or some problem
-     * @param tag                      som object you put and get after the process
+     * @param tag                      some object you put and get after the process
      * @param onDownloadBitmapListener listener when bitmap ready or error
      */
     public LoadingUrlThread(ImageView imageView, ProgressBar progressBar, String urlImage, @DrawableRes int defaultRes, T tag, OnDownloadBitmapListener<T> onDownloadBitmapListener) {

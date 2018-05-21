@@ -46,13 +46,11 @@ public class CircleImageView extends android.support.v7.widget.AppCompatImageVie
         }
 
         Bitmap b;
-        try {
+        if(drawable instanceof BitmapDrawable){
             b = ((BitmapDrawable) drawable).getBitmap();
-        } catch (ClassCastException e) {
-           b = BitmapFactory.decodeResource(getResources(), AppContext.getDefaultResImageHero());
+        }else{
+            b = BitmapFactory.decodeResource(getResources(), AppContext.getDefaultResImageHero());
         }
-
-
         if (b != null) {
             Bitmap bitmap = b.copy(Bitmap.Config.ARGB_8888, true);
             Bitmap roundBitmap = getRoundBitmap(bitmap, width);

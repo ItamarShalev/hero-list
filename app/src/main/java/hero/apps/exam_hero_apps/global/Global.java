@@ -256,7 +256,7 @@ public class Global {
          * @param fileName the file name you want read
          * @return the file if error so null
          */
-        private static File getFileImage(Context context, String fileName) {
+        public static File getFileImage(Context context, String fileName) {
             fileName = fileName.replace(" ","_");
             ContextWrapper wrapper = new ContextWrapper(context);
             File directory = wrapper.getDir("imageDir", Context.MODE_PRIVATE);
@@ -282,7 +282,7 @@ public class Global {
             OutputStream outputStream = null;
             try {
                 outputStream = new FileOutputStream(getFileImage(context, fileName));
-                bitmapImage.compress(Bitmap.CompressFormat.PNG, 100, outputStream);
+                bitmapImage.compress(Bitmap.CompressFormat.JPEG, 50, outputStream);
             } catch (Exception e) {
                 AppContext.catchException(context, Global.class, e);
             } finally {

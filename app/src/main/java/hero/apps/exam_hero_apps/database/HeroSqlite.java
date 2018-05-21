@@ -97,9 +97,9 @@ public class HeroSqlite extends SQLiteOpenHelper {
     /**
      * Because SQLite is limited to 1 megabyte I used with files
      */
-    public final void insertImage(Hero hero) {
-        if (hero == null || hero.getImageBitmap() == null) return;
-        Global.BitmapUtils.saveBitmapToFile(context, hero.getImageBitmap(), hero.getName());
+    public final void insertImage(String nameFile,Bitmap bitmap) {
+        if (bitmap == null || nameFile == null) return;
+        Global.BitmapUtils.saveBitmapToFile(context, bitmap,nameFile);
     }
 
     public final void updateItem(String name, Hero hero) {

@@ -1,5 +1,6 @@
 package hero.apps.exam_hero_apps.data;
 
+import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
@@ -12,6 +13,9 @@ import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
+
+import hero.apps.exam_hero_apps.global.AppContext;
+import hero.apps.exam_hero_apps.global.Global;
 
 
 /**
@@ -34,11 +38,12 @@ public class Hero implements Parcelable{
         this.name = name;
         this.abilitiesArray = abilitiesArray;
         this.imageUrl = imageUrl;
-        this.imageBitmap = imageBitmap;
         if (isFavoriteHero) {
             makeFavorite();
         }
         listListenerReadyImage = new ArrayList<>();
+        setImageBitmap(imageBitmap);
+
     }
 
     protected Hero(Parcel in) {

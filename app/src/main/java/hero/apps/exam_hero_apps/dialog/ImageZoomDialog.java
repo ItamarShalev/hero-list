@@ -30,8 +30,6 @@ import hero.apps.exam_hero_apps.view.ZoomView;
 public class ImageZoomDialog extends DialogFragment {
 
     public static final String KEY_TITLE = "KEY_TITLE";
-    public static final String KEY_BITMAP = "KEY_BITMAP";
-
 
 
     private Bitmap bitmapImage;
@@ -81,7 +79,7 @@ public class ImageZoomDialog extends DialogFragment {
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString(KEY_TITLE,titleImage);
-        outState.putParcelable(KEY_BITMAP,bitmapImage);
+        bitmapImage = null;
     }
 
 
@@ -105,7 +103,6 @@ public class ImageZoomDialog extends DialogFragment {
         if (bitmapImage == null){
             bitmapImage = AppContext.getDefaultBitmapImageHero(getActivity());
         }
-
 
     }
 

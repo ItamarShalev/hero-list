@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements Hero.FavoriteChan
         }
         initViews();
         setSupportActionBar(toolbar);
+        collapsingToolbarLayout.setTitle("");
         initObjects();
         initRecyclerView();
     }
@@ -271,5 +272,10 @@ public class MainActivity extends AppCompatActivity implements Hero.FavoriteChan
             unregisterReceiver(broadcastReceiver);
             broadcastReceiver = null;
         }
+/*        for (Hero hero : heroList) {
+            if (hero.getImageBitmap() != null) {
+                hero.getImageBitmap().recycle();
+            }
+        }*/
     }
 }
