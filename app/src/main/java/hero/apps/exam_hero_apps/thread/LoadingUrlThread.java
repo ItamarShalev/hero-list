@@ -68,8 +68,6 @@ public class LoadingUrlThread<T> extends Thread {
              bitmap = Picasso.get().load(urlImage).get();
         } catch (IOException e) {
              bitmap = null;
-        }if (onDownloadBitmapListener != null && bitmap != null) {
-            onDownloadBitmapListener.OnDownloadBitmap(bitmap, tag);
         }
         handler.post(new Runnable() {
             @Override
@@ -85,6 +83,9 @@ public class LoadingUrlThread<T> extends Thread {
                     if (referenceImageView.get() != null){
                         referenceImageView.get().setImageBitmap(bitmap);
                         Global.fadeView(0, 1, referenceImageView.get(), 600);
+                    }
+                    if (onDownloadBitmapListener != null && bitmap != null) {
+                        onDownloadBitmapListener.OnDownloadBitmap(bitmap, tag);
                     }
 
                 }
